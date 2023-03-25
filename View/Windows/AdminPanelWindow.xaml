@@ -1,0 +1,75 @@
+﻿<Window x:Class="OOO_Goods_for_Animals.View.Windows.AdminPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOO_Goods_for_Animals.View.Windows"
+        mc:Ignorable="d"
+        Background="#FF76E383"
+        Title="ООО «Товары для животных» - Админ панель" MinHeight="450" MinWidth="800" MaxWidth="800" Height="450" Width="800">
+    <Border Background="White" Margin="10" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Name="ProductTable" Background="White" SelectedItem="{Binding SelectProduct}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Products}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Артикул (ПК)" Binding="{Binding ArticleNumber}"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding NameItem.Name}"/>
+                    <DataGridTextColumn Header="Ед.изм." Binding="{Binding Unit}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="MAX скидка" Binding="{Binding MaxDiscount}"/>
+                    <DataGridTextColumn Header="Производитель" Binding="{Binding ManufacturerItem.Name}"/>
+                    <DataGridTextColumn Header="Поставщик" Binding="{Binding ProviderItem.Name}"/>
+                    <DataGridTextColumn Header="Категория" Binding="{Binding CategoryItem.Name}"/>
+                    <DataGridTextColumn Header="Скидка" Binding="{Binding CurrentDiscount}"/>
+                    <DataGridTextColumn Header="Количество товаров на складе" Binding="{Binding CountProductStock}"/>
+                    <DataGridTextColumn Header="Описание товара" Binding="{Binding Discription}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Background="#FF498C51" CornerRadius="15" Margin="15, 5" Grid.Row="2">
+                <StackPanel HorizontalAlignment="Center" Margin="10" Grid.Row="2">
+                    <StackPanel Orientation="Horizontal" CanHorizontallyScroll="True">
+                        <Label Width="75" Content="Артикул"/>
+                        <Label Width="75" Content="Название"/>
+                        <Label Width="75" Content="Ед.изм."/>
+                        <Label Width="75" Content="Цена"/>
+                        <Label Width="75" Content="MAX скидка"/>
+                        <Label Width="75" Content="Производитель"/>
+                        <Label Width="75" Content="Поставщик"/>
+                        <Label Width="75" Content="Категория"/>
+                        <Label Width="75" Content="Скидка"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Width="75" Text="{Binding AddProduct.ArticleNumber}"/>
+                        <ComboBox Width="75" SelectedIndex="{Binding AddProduct.NameID}" Text="" ItemsSource="{Binding Names}"/>
+                        <TextBox Width="75" Text="{Binding AddProduct.Unit}"/>
+                        <TextBox Width="75" Text="{Binding AddProduct.Price}"/>
+                        <TextBox Width="75" Text="{Binding AddProduct.MaxDiscount}"/>
+                        <ComboBox Width="75" SelectedIndex="{Binding AddProduct.ManufacturerID}" Text="" ItemsSource="{Binding Manufacturers}"/>
+                        <ComboBox Width="75" SelectedIndex="{Binding AddProduct.ProviderItemID}" Text="" ItemsSource="{Binding Providers}"/>
+                        <ComboBox Width="75" SelectedIndex="{Binding AddProduct.CategoryItemID}" Text="" ItemsSource="{Binding Categorys}"/>
+                        <TextBox Width="75" Text="{Binding AddProduct.CurrentDiscount}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" CanHorizontallyScroll="True">
+                        <Label Width="75" Content="Количество"/>
+                        <Label Width="75" Content="Описание"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Width="75" Text="{Binding AddProduct.CountProductStock}"/>
+                        <TextBox Width="225" Text="{Binding AddProduct.Discription}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel Grid.Row="3" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Background="#FF498C51" Click="Buttons_Click" Width="200"  Content="Добавить / Обновить" Padding="15,10" Margin="30,0"/>
+                <Button Background="#FF498C51" Click="Buttons_Click" Width="200"  Content="Удалить" Padding="15,10" Margin="30,0"/>
+                <Button Background="#FF498C51" Click="Buttons_Click" Width="200"  Content="Снять выделение" Padding="15,10" Margin="30,0"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

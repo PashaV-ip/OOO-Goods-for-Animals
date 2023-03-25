@@ -1,0 +1,42 @@
+﻿<Window x:Class="OOO_Goods_for_Animals.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOO_Goods_for_Animals"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Title="ООО «Товары для животных» - Авторизация" Height="500" Width="450" Background="#FF76E383">
+    <Border Background="White" Margin="10" CornerRadius="30">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Background="#FF498C51" Margin="10" CornerRadius="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Авторизация" Margin="75,5" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                
+
+                <TextBlock Grid.Row="1" Text="Введите логин" FontSize="20" Margin="10, 30, 10, 0"/>
+                <TextBox Text="{Binding Login}" Grid.Row="2" FontSize="20" Margin="10" Padding="5, 2"/>
+
+                <TextBlock Grid.Row="3" Text="Введите пароль" FontSize="20" Margin="10, 30, 10, 0"/>
+                <PasswordBox Password="2L6KZG" Name="pswUserPassword" Grid.Row="4" FontSize="20" Margin="10" Padding="5, 2"/>
+
+                <Button Background="#FF498C51" Name="buttonEnter" Click="Button_Click" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="150" Height="35" Content="Войти" FontSize="20" Margin="20, 30"/>
+                <Button Background="#FF498C51" Name="buttonExit" Click="Button_Click" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="35" Content="Выход" FontSize="20" Margin="20, 30"/>
+            </Grid>
+            <Grid Name="gridLoadScreen" Visibility="{Binding LoadScreen}">
+                <Border Background="White" CornerRadius="30" Opacity="0.8"/>
+                <Label Content="Подождите..." FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

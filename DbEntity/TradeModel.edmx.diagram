@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19f5c57bbd8b456385fa4e8b35555e57" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="TradeModel.CategoryItem" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.ManufacturerItem" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.NameItem" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.Order" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.OrderHasProduct" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.PickupPoint" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.ProviderItem" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.Role" Width="1.5" PointX="1.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.StatusOrder" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.User" Width="1.5" PointX="3" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TradeModel.UserInfo" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <AssociationConnector Association="TradeModel.FK__Order__PickupPoi__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeModel.FK__Order__StatusOrd__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeModel.FK__Order__UserInfoI__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeModel.FK__OrderHasP__Order__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeModel.FK__UserInfo__UserRo__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="TradeModel.FK__User__UserInfoID__5441852A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TradeModel.Product" Width="1.5" PointX="3" PointY="5" />
+        <AssociationConnector Association="TradeModel.FK__Product__Categor__3E52440B" />
+        <AssociationConnector Association="TradeModel.FK__Product__Manufac__3F466844" />
+        <AssociationConnector Association="TradeModel.FK__Product__Name__403A8C7D" />
+        <AssociationConnector Association="TradeModel.FK__OrderHasP__Produ__3D5E1FD2" />
+        <AssociationConnector Association="TradeModel.FK__Product__Provide__412EB0B6" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
